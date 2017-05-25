@@ -1,0 +1,16 @@
+.grid {
+  &__container {
+    width: 80%;
+    margin: auto;
+    padding: 30px;
+  }
+
+  &__list {
+    padding: 20px;
+    border: 1px solid #ccc;
+  }
+
+  &__item {
+    border: 1px solid #ccc;
+  }
+}
