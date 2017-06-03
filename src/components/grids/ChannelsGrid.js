@@ -2,47 +2,31 @@ import React from 'react';
 import {GridList, GridTile} from 'material-ui/GridList';
 import IconButton from 'material-ui/IconButton';
 import Subheader from 'material-ui/Subheader';
-import StarBorder from 'material-ui/svg-icons/toggle/star-border';
+import PlayIcon from 'material-ui/svg-icons/av/play-circle-filled';
 
 import './ChannelsGrid.scss';
 
-const channels = [
-  {
-    img: 'http://i.imgur.com/h6uVWLG.png',
-    title: 'Falhando no Amor',
-    author: 'foo',
-  },
-  {
-    img: 'https://media.giphy.com/media/VnIoecjQ3caw8/giphy.gif',
-    title: 'Music',
-    author: 'afoo',
-  },
-  {
-    img: 'https://i1.sndcdn.com/avatars-000098499912-k7bbxx-large.jpg',
-    title: 'Best Cast',
-    author: 'bestcast',
-  },
-];
+
+const OnGrudTileClick = (evt, channel) => {
+  alert(channel.title)
+}
 
 const GridItem = (channel) => (
   <GridTile
     className="grid__item"
-    key={channel.img}
+    key={channel.uuid}
     title={channel.title}
-    subtitle={<span>by <b>{channel.author}</b></span>}
-    actionIcon={<IconButton><StarBorder color="white" /></IconButton>} >
-    <img src={channel.img} />
+    subtitle={ channel.description}
+    actionIcon={<IconButton><PlayIcon color="white" /></IconButton>}
+    onClick={ e => OnGrudTileClick(e, channel) } >
+      <img src={channel.image_url} />
   </GridTile>
 )
 
-const ChannelsGrid = () => (
+const ChannelsGrid = ({...props}) => (
   <div className="grid__container">
-    <GridList
-      className="grid__list"
-      cols={ 3 }
-      cellHeight={ 300 }
-    >
-      { channels.map(GridItem) }
+    <GridList className="grid__list" cols={ 3 } cellHeight={ 300 } >
+    { props.channels.map(GridItem) }
     </GridList>
   </div>
 );
