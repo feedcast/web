@@ -24,13 +24,10 @@ class SingleEventHandler {
   }
 
   addListener(listener) {
-    console.log("add listener " + this.id);
-    console.log(listener);
     this.listeners.push(listener);
   }
 
   publish(data){
-    console.log("publish " + this.id);
     _.map(this.listeners, (listener) => listener(data));
   }
 }

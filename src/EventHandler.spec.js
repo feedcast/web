@@ -1,4 +1,4 @@
-import { EventHandler, SingleEventHandler } from 'EventHandler';
+import { EventHandler, SingleEventHandler } from './EventHandler';
 
 describe("Event Handler", () => {
   const eh = new EventHandler();

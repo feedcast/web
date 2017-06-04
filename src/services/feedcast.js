@@ -5,7 +5,6 @@ export default {
   // return: Promise
   fetchChannels() {
     return fetch(process.env.REACT_APP_FEEDCAST_API + '/channels')
-           .then(a => { console.log(a); return a })
            .then(res => res.json())
            .then(data => data.channels);
 

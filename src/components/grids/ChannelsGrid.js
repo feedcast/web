@@ -1,4 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
+
+import { RouteTo } from '../../Routes';
+
 import {GridList, GridTile} from 'material-ui/GridList';
 import IconButton from 'material-ui/IconButton';
 import Subheader from 'material-ui/Subheader';
@@ -7,20 +11,17 @@ import PlayIcon from 'material-ui/svg-icons/av/play-circle-filled';
 import './ChannelsGrid.scss';
 
 
-const OnGrudTileClick = (evt, channel) => {
-  alert(channel.title)
-}
-
 const GridItem = (channel) => (
-  <GridTile
-    className="grid__item"
-    key={channel.uuid}
-    title={channel.title}
-    subtitle={ channel.description}
-    actionIcon={<IconButton><PlayIcon color="white" /></IconButton>}
-    onClick={ e => OnGrudTileClick(e, channel) } >
-      <img src={channel.image_url} />
-  </GridTile>
+  <Link to={ RouteTo('channel', { uuid: channel.uuid }) } >
+    <GridTile
+      className="grid__item"
+      key={channel.uuid}
+      title={channel.title}
+      subtitle={ channel.description}
+      actionIcon={<IconButton><PlayIcon color="white" /></IconButton>} >
+        <img src={channel.image_url} />
+    </GridTile>
+  </Link>
 )
 
 const ChannelsGrid = ({...props}) => (
