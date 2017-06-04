@@ -5,7 +5,6 @@ import { RouteTo } from '../../Routes';
 
 import {GridList, GridTile} from 'material-ui/GridList';
 import IconButton from 'material-ui/IconButton';
-import Subheader from 'material-ui/Subheader';
 import PlayIcon from 'material-ui/svg-icons/av/play-circle-filled';
 
 import './ChannelsGrid.scss';

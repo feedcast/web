@@ -4,11 +4,8 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import Header from '../components/header/';
 import colors from 'colors';
-import { EventHandler } from '../EventHandler';
 
 import './Page.scss';
-
-const eventHandler = new EventHandler();
 
 const theme = getMuiTheme({
   appBar: {

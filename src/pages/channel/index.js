@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 import feedcast from '../../services/feedcast';
 
-import ChannelGrid from '../../components/grids/ChannelsGrid';
 import Page from '../Page';
 
 class Channel extends Component {
@@ -18,7 +17,6 @@ class Channel extends Component {
   }
 
   render() {
-    debugger
     return (
       <Page>
         <div className="home">

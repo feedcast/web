@@ -21,6 +21,7 @@
     "css-loader": "0.28.1",
     "dotenv": "4.0.0",
     "eslint": "3.19.0",
+    "eslint-config-google": "^0.8.0",
     "eslint-config-react-app": "^1.0.4",
     "eslint-loader": "1.7.1",
     "eslint-plugin-flowtype": "2.33.0",
@@ -40,9 +41,9 @@
     "prop-types": "^15.5.10",
     "react-dev-utils": "^2.0.1",
     "react-error-overlay": "^1.0.6",
+    "resolve-url-loader": "^2.0.2",
     "sass-loader": "^6.0.5",
     "style-loader": "0.17.0",
-    "resolve-url-loader": "^2.0.2",
     "sw-precache-webpack-plugin": "0.9.1",
     "url-loader": "0.5.8",
     "webpack": "^2.5.1",
@@ -86,6 +87,9 @@
     ]
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": ["react-app", "eslint:recommended"],
+    "rules":{
+      "no-console":0
+    }
   }
 }
