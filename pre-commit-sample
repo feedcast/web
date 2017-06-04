@@ -1,0 +1,7 @@
+#!/bin/sh
+#
+# An example hook script to verify what is about to be committed.
+# to enable this copy this file to .git/hooks/pre-commit
+
+npm run test
+npm run lint
